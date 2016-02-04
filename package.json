@@ -1,0 +1,24 @@
+{
+  "name": "dvpnt.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "watch-less": "chokidar 'styles/**/*.less' -c 'lessc styles/index.less > static/index.css'",
+    "watch-js": "watchify app/app.js -o static/app.js",
+    "watch-jade": "chokidar index.jade -c 'jade index.jade -o static'",
+    "run": "parallelshell 'npm run watch-less' 'npm run watch-js' 'npm run watch-jade' 'nodemon app.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "chokidar-cli": "^1.2.0",
+    "less": "^2.6.0",
+    "parallelshell": "^2.0.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "mo-js": "^0.147.4"
+  }
+}
