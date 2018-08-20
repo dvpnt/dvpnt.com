@@ -1,0 +1,26 @@
+@keyframes appearance {
+	from {
+		opacity: 0.3;
+		transform: translateY(100px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.header {
+	font-family: 'Open Sans', Arial, sans-serif;
+
+	animation: appearance 0.8s ease-out;
+
+	&__title {
+		font-weight: bold;
+		font-size: 5vmax;
+	}
+
+	&__subtitle {
+		font-size: 4vmax;
+		color: gray;
+	}
+}

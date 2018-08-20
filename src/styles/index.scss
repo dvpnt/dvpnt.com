@@ -1,0 +1,17 @@
+@import "../../node_modules/normalize.css/normalize.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Souce+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+*, ::after, ::before {
+	box-sizing: border-box;
+	font-family: 'Source Sans', Arial, sans-serif;
+}
+
+@import "header";
+@import "hero";
+@import "logo";
+@import "page";
+@import "projects";
+@import "technologies";
