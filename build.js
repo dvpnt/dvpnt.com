@@ -5,16 +5,9 @@ const markdown = require('metalsmith-markdown');
 const sass = require('metalsmith-sass');
 const watch = require('metalsmith-watch');
 
-Metalsmith(__dirname)
+const metalsmith = Metalsmith(__dirname)
 	.source('src')
 	.destination('build')
-	.use(watch({
-		paths: {
-			'src/**/*': '**/*',
-			'layouts/**/*': '**/*'
-		},
-	}))
-	.use(debug())
 	.use(sass({
 		sourceMap: true,
 		sourceMapContents: true
@@ -25,6 +18,19 @@ Metalsmith(__dirname)
 			pretty: true
 		}
 	}))
-	.build(function(err) {
-		if (err) throw err;
-	});
+
+if (process.env.NODE_ENV === 'development') {
+	metalsmith
+		.use(debug())
+		.use(watch({
+			paths: {
+				'src/**/*': '**/*',
+				'layouts/**/*': '**/*'
+			},
+		}));
+}
+
+metalsmith.build(function(err) {
+	if (err) throw err;
+});
+

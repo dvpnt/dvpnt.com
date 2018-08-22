@@ -1,3 +1,5 @@
+@import "variables";
+
 @keyframes appearance {
 	from {
 		opacity: 0.3;
@@ -10,17 +12,28 @@
 }
 
 .header {
-	font-family: 'Open Sans', Arial, sans-serif;
+	font-family: Montserrat, Arial, sans-serif;
 
 	animation: appearance 0.8s ease-out;
 
 	&__title {
 		font-weight: bold;
 		font-size: 5vmax;
+		color: white;
+		font-family: Montserrat, Arial, sans-serif;
+
+		@media (min-width: map-get($grid-breakpoints, "lg")) {
+			font-size: 60px;
+		}
 	}
 
 	&__subtitle {
 		font-size: 4vmax;
-		color: gray;
+		color: lightgray;
+		font-family: Montserrat, sans-serif;
+
+		@media (min-width: map-get($grid-breakpoints, "lg")) {
+			font-size: 50px;
+		}
 	}
 }

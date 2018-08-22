@@ -2,6 +2,7 @@ doctype html
 
 title= title
 link(rel="stylesheet", href="./styles/index.css")
+meta(charset="utf-8")
 
 body
 	.page
@@ -10,25 +11,38 @@ body
 		section.hero
 			header.header
 				.header__title Запускаем и поддерживаем
-				.header__subtitle &mdash; стартапы, продукты, решения
+				.header__subtitle &mdash; стартапы, инфраструктуру
 
-		section.technologies
-			.technologies__part
-				.technologies__title Back-end
-				.technologies__description
-					| Используем Javascript и node.js для большинства наших проектов.
-					| Пишем тесты, используя node-tap.
-			.technologies__part
-				.technologies__title Front-end
-				.technologies__description 
-					| React и Redux наши основные фреймворки.
-					| Мы любим styled-components.
-					| Собираем проекты с помощью webpack и babel.
-					| Тестируем компоненты с помощью enzyme и node-tap. 
-					| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
+		section.main
+			.technologies
+				.technologies__part
+					.technologies__title Back-end
+					.technologies__description
+						| Используем Javascript и node.js для большинства наших проектов.
+						| Пишем тесты, используя node-tap.
+				.technologies__part
+					.technologies__title Front-end
+					.technologies__description 
+						| React и Redux наши основные фреймворки.
+						| Мы любим styled-components.
+						| Собираем проекты с помощью webpack и babel.
+						| Тестируем компоненты с помощью enzyme и node-tap. 
+						| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
+				.technologies__part
+					.technologies__title Infrastructure
+					.technologies__description 
+						| React и Redux наши основные фреймворки.
+						| Мы любим styled-components.
+						| Собираем проекты с помощью webpack и babel.
+						| Тестируем компоненты с помощью enzyme и node-tap. 
+						| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
 
-		section.projects
-			
+			.projects
+				h2.projects_heading Мы сделали
+
+				figure.projects__item.project
+					img(src="https://all.culture.ru/images/intro/partner-2do2go.png", style="fill: black")
+
 
 		section.open-source
 

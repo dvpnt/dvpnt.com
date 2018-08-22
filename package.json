@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "NODE_ENV=development node build",
     "build": "node build"
   },
   "author": "",
