@@ -1,4 +1,5 @@
 .main {
+	position: relative;
 	width: 100%;
 	min-height: 100vh;
 	background: white;
@@ -6,6 +7,8 @@
 
 	border-radius: 4px;
 	box-shadow: 0 5px 20px rgba(255, 178, 34, 0.1);
+
+	z-index: 1;
 
 	&__part {
 		margin-bottom: 80px;

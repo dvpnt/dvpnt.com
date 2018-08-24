@@ -1,6 +1,7 @@
 @import "variables";
 
 .page {
+	position: relative;
 	width: 100%;
 
 	min-width: 320px;
@@ -12,19 +13,9 @@
 
 	background-color: #06038d;
 
-//	@media (min-width: map-get($grid-breakpoints, "sm")) {
-//		max-width: 540px;
-//	}
-//
+	overflow: hidden;
+
 	@media (min-width: map-get($grid-breakpoints, "md")) {
 		padding: 20px 40px 40px;
 	}
-
-//	@media (min-width: map-get($grid-breakpoints, "lg")) {
-//		max-width: 960px;
-//	}
-//
-//	@media (min-width: map-get($grid-breakpoints, "xl")) {
-//		max-width: 1140px;
-//	}
 }

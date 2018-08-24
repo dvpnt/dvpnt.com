@@ -15,12 +15,14 @@
 
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
+	text-decoration: none;
 
 	border: 1px solid transparent;
 	border-radius: 4px;
 	outline: none;
 
 	transition: background-color 100ms ease, color 80ms ease, border-color 100ms ease;
+	
 
 	&:hover,
 	&:focus,
@@ -29,5 +31,6 @@
 		border-color: blue;
 		background: transparent;
 		color: blue;
+		text-decoration: none;
 	}
 }

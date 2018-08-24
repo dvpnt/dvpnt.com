@@ -8,6 +8,8 @@ body
 		.logo devpoint
 
 		section.hero
+			.triangle.triangle__first
+			.triangle.triangle__second
 			header.header
 				.header__title Запускаем и поддерживаем
 				.header__subtitle &mdash; стартапы, инфраструктуру
@@ -19,63 +21,90 @@ body
 						.technologies__title Back-end
 						.technologies__description
 							| Используем 
-							a(href="http://javascript.org") javascript
-							| 
-							| и node.js для большинства наших проектов.
-							| Пишем тесты, используя node-tap.
+							a(href="https://javascript.org", target="__blank") javascript
+							|  и 
+							a(href="https://nodejs.org", target="__blank") node.js
+							|  для большинства наших проектов.
+							| Храним данныe в зависимости от задачи,
+							|  чаще всего в 
+							a(href="https://www.mongodb.com", target="__blank") MongoDB
+							|  и 
+							a(href="https://www.postgresql.org", target="__blank") PostgreSql
+							| . Покрываем тестами, используя 
+							a(href="https://github.com/tapjs/node-tap", target="__blank") node-tap
+							| , считаем покрытие, используя 
+							a(href="https://github.com/istanbuljs/nyc", target="__blank") nyc
+							| .
 					.technologies__part
 						.technologies__title Front-end
 						.technologies__description 
-							| React и Redux наши основные фреймворки.
-							| Мы любим styled-components.
-							| Собираем проекты с помощью webpack и babel.
-							| Тестируем компоненты с помощью enzyme и node-tap. 
-							| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
+							a(href="https://reactjs.org", target="__blank") React
+							|  и 
+							a(href="https://redux.js.org", target="__blank") Redux 
+							| наши основные фреймворки. Мы любим css-in-js и используем 
+							a(href="https://www.styled-components.com", target="__blank") styled-components
+							| . Собираем проекты с помощью 
+							a(href="https://webpack.js.org", target="__blank") webpack
+							|  и 
+							a(href="https://babeljs.io", target="__blank") babel
+							| . Тестируем компоненты с помощью 
+							a(href="https://github.com/airbnb/enzyme", target="__blank") enzyme
+							| , используя 
+							a(href="https://github.com/tapjs/node-tap", target="__blank") node-tap
+							| . Пишем end-to-end тесты с помощью 
+							a(href="https://webdriver.io", target="__blank") webdriver.io
+							|  и запускаем в 
+							a(href="https://www.seleniumhq.org", target="__blank") Selenium
+							| .
 					.technologies__part
 						.technologies__title Infrastructure
 						.technologies__description 
-							| React и Redux наши основные фреймворки.
-							| Мы любим styled-components.
-							| Собираем проекты с помощью webpack и babel.
-							| Тестируем компоненты с помощью enzyme и node-tap. 
-							| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
+							| Мы используем CI для всех наших проектов.
+							| Автоматизируем процесс выкатки с помощью 
+							a(href="https://www.ansible.com", target="__blank") ansible
+							| .
 
 			.main__part
 				h2.main__heading Мы сделали
 
 				.projects
 					.projects__items
-						img.projects__item.projects__item_2do2go(src="./images/2do.svg")
-						img.projects__item(src="./images/cultreg.svg")
-						img.projects__item(src="./images/eipsk.svg")
+						a.projects__item(href="https://2do2go.ru", target="__blank", rel="nofollow")
+							img.projects__image(src="./images/2do.svg")
+						a.projects__item(href="https://bel.cultreg.ru", target="__blank", rel="nofollow")
+							img.projects__image(src="./images/cultreg.svg")
+						a.projects__item(href="https://all.culture.ru", target="__blank", rel="nofollow")
+							img.projects__image(src="./images/eipsk.svg")
 
 			.main__part
 				h2.main__heading Open-source
 				.open-source
 					.open-source__intro 
-						| В наших проектах мы используем только решения и библиотеки с открытым исходным кодом.
-						| Помимо использования мы еще и делаем свои.
-						| Вот несколько примеров проектов, сделанных нами, а также тех, в которых мы принимали участие.
-						| Этот подход позволяет нам всегда быть в курсе самых последних технологий использовать их и развивать.
+						p
+							| В наших проектах мы используем только решения и библиотеки с открытым исходным кодом.
+							| Помимо использования мы еще и делаем свои.
+							| Этот подход позволяет нам всегда быть в курсе самых последних технологий, использовать их и по возможности развивать.
+						p
+							| Вот несколько примеров проектов, сделанных нами, а также тех, в которых мы принимали участие.
 
 					.open-source__projects
 						.project
-							.project__title rpc-over-ipc
+							a.project__title(href="https://github.com/dvpnt/rpc-over-ipc", target="__blank") rpc-over-ipc
 							.project__description Lightweight RPC over IPC for node.js
 
 						.project
-							.project__title passport-ok-strategy
+							a.project__title(href="https://github.com/dvpnt/passport-ok-strategy", target="__blank") passport-ok-strategy
 							.project__description Passport strategy for authenticating with odnoklassniki using the OAuth 2.0 API.
 
 						.project
-							.project__title styled-media-helper
+							a.project__title(href="https://github.com/dvpnt/styled-media-helper", target="__blank") styled-media-helper
 							.project__description Module that makes easy to write media queries using styled-components.
 
 			.main__part
 				h3.main__heading У вас есть задача или вопрос? Давайте обсуждать.
 
 				div(style="display: flex; justify-content: center;")
-					button.button Написать
+					a.button(href="mailto:contact@dvpnt.com") Написать
 
 		section.open-source
 

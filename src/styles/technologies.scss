@@ -1,8 +1,10 @@
+@import "variables";
+
 .technologies {
 	display: flex;
 	flex-direction: column;
 
-	@media (min-width: 768px) {
+	@media (min-width: map-get($grid-breakpoints, "lg")) {
 		flex-direction: row;
 	}
 
@@ -11,7 +13,7 @@
 		border-right: 1px solid #f5f3f7;
 		border-bottom: 1px solid #f5f3f7;
 
-		@media (min-width: 768px) {
+		@media (min-width: map-get($grid-breakpoints, "lg")) {
 			flex-basis: 33.3%;
 			padding: 40px;
 		}
