@@ -1,26 +1,32 @@
+@import "variables";
+
 .projects {
-	@media (min-width: 768px) {
-		flex-direction: row;
-	}
-
 	&__part {
-		padding: 20px;
-
 		@media (min-width: 768px) {
 			flex-basis: 33.3%;
 		}
 	}
 
-	&_heading {
-		width: 100%;
-		font-size: 3vmax;
-		font-family: Montserrat, Arial, sans-serif;
-		text-align: center;
+	&__items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 20px;
+
+		@media (min-width: map-get($grid-breakpoints, "md")) {
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
 	}
 
-	&_item {
-		&__logo__2do2go {
-			fill: #5b9de8;
+	&__item {
+		width: 45vw;
+		margin-bottom: 40px;
+
+		@media (min-width: map-get($grid-breakpoints, "md")) {
+			width: 20vw;
+			margin-bottom: 0;
 		}
 	}
 }

@@ -10,10 +10,21 @@
 	box-sizing: border-box;
 }
 
+a {
+	color: #00e7cb;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@import "button";
 @import "header";
 @import "hero";
 @import "logo";
 @import "main";
+@import "open-source";
 @import "page";
 @import "projects";
 @import "technologies";

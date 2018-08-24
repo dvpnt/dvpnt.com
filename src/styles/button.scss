@@ -1,0 +1,33 @@
+.button {
+	::-moz-focus-inner {
+		border: none;
+	}
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 20px 30px;
+
+	background: blue;
+	color: white;
+	cursor: pointer;
+
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+
+	border: 1px solid transparent;
+	border-radius: 4px;
+	outline: none;
+
+	transition: background-color 100ms ease, color 80ms ease, border-color 100ms ease;
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none;
+		border-color: blue;
+		background: transparent;
+		color: blue;
+	}
+}

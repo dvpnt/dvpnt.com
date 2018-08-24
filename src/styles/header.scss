@@ -20,7 +20,7 @@
 		font-weight: bold;
 		font-size: 5vmax;
 		color: white;
-		font-family: Montserrat, Arial, sans-serif;
+		font-family: Montserrat, sans-serif;
 
 		@media (min-width: map-get($grid-breakpoints, "lg")) {
 			font-size: 60px;

@@ -1,9 +1,8 @@
 doctype html
-
-title= title
-link(rel="stylesheet", href="./styles/index.css")
-meta(charset="utf-8")
-
+head
+	title= title
+	link(rel="stylesheet", href="./styles/index.css")
+	meta(charset="utf-8")
 body
 	.page
 		.logo devpoint
@@ -14,35 +13,69 @@ body
 				.header__subtitle &mdash; стартапы, инфраструктуру
 
 		section.main
-			.technologies
-				.technologies__part
-					.technologies__title Back-end
-					.technologies__description
-						| Используем Javascript и node.js для большинства наших проектов.
-						| Пишем тесты, используя node-tap.
-				.technologies__part
-					.technologies__title Front-end
-					.technologies__description 
-						| React и Redux наши основные фреймворки.
-						| Мы любим styled-components.
-						| Собираем проекты с помощью webpack и babel.
-						| Тестируем компоненты с помощью enzyme и node-tap. 
-						| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
-				.technologies__part
-					.technologies__title Infrastructure
-					.technologies__description 
-						| React и Redux наши основные фреймворки.
-						| Мы любим styled-components.
-						| Собираем проекты с помощью webpack и babel.
-						| Тестируем компоненты с помощью enzyme и node-tap. 
-						| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
+			.main__part
+				.technologies
+					.technologies__part
+						.technologies__title Back-end
+						.technologies__description
+							| Используем 
+							a(href="http://javascript.org") javascript
+							| 
+							| и node.js для большинства наших проектов.
+							| Пишем тесты, используя node-tap.
+					.technologies__part
+						.technologies__title Front-end
+						.technologies__description 
+							| React и Redux наши основные фреймворки.
+							| Мы любим styled-components.
+							| Собираем проекты с помощью webpack и babel.
+							| Тестируем компоненты с помощью enzyme и node-tap. 
+							| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
+					.technologies__part
+						.technologies__title Infrastructure
+						.technologies__description 
+							| React и Redux наши основные фреймворки.
+							| Мы любим styled-components.
+							| Собираем проекты с помощью webpack и babel.
+							| Тестируем компоненты с помощью enzyme и node-tap. 
+							| Пишем end-to-end тесты с помощью webdriver.io и запускаем в Selenium.
 
-			.projects
-				h2.projects_heading Мы сделали
+			.main__part
+				h2.main__heading Мы сделали
 
-				figure.projects__item.project
-					img(src="https://all.culture.ru/images/intro/partner-2do2go.png", style="fill: black")
+				.projects
+					.projects__items
+						img.projects__item.projects__item_2do2go(src="./images/2do.svg")
+						img.projects__item(src="./images/cultreg.svg")
+						img.projects__item(src="./images/eipsk.svg")
 
+			.main__part
+				h2.main__heading Open-source
+				.open-source
+					.open-source__intro 
+						| В наших проектах мы используем только решения и библиотеки с открытым исходным кодом.
+						| Помимо использования мы еще и делаем свои.
+						| Вот несколько примеров проектов, сделанных нами, а также тех, в которых мы принимали участие.
+						| Этот подход позволяет нам всегда быть в курсе самых последних технологий использовать их и развивать.
+
+					.open-source__projects
+						.project
+							.project__title rpc-over-ipc
+							.project__description Lightweight RPC over IPC for node.js
+
+						.project
+							.project__title passport-ok-strategy
+							.project__description Passport strategy for authenticating with odnoklassniki using the OAuth 2.0 API.
+
+						.project
+							.project__title styled-media-helper
+							.project__description Module that makes easy to write media queries using styled-components.
+
+			.main__part
+				h3.main__heading У вас есть задача или вопрос? Давайте обсуждать.
+
+				div(style="display: flex; justify-content: center;")
+					button.button Написать
 
 		section.open-source
 

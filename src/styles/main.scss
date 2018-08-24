@@ -2,7 +2,19 @@
 	width: 100%;
 	min-height: 100vh;
 	background: white;
+	padding-bottom: 1px;
 
 	border-radius: 4px;
 	box-shadow: 0 5px 20px rgba(255, 178, 34, 0.1);
+
+	&__part {
+		margin-bottom: 80px;
+	}
+
+	&__heading {
+		width: 100%;
+		font-size: 2.5vmax;
+		font-family: Montserrat, sans-serif;
+		text-align: center;
+	}
 }
