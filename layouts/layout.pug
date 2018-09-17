@@ -5,7 +5,12 @@ head
 	meta(charset="utf-8")
 body
 	.page
-		.logo devpoint
+		.logo
+			svg#svg8(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 37.820202 9.6731663', width='37.82mm', version='1.1', height='9.6732mm')
+				g#layer1(transform='translate(-53.588 -80.056)')
+					g#text12(aria-label='devpoint', style='font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-caps:normal;font-feature-settings:normal')
+						path#path56(style='font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-caps:normal;font-feature-settings:normal', stroke-width='.26458', d='m91.408 83.602v-0.64558h-1.0478v-1.8309h-0.70908v1.8309h-0.6985v0.64558h0.6985v4.0111h0.70908v-4.0111zm-7.551 4.0111h0.70908v-2.4765c0-1.0478 0.58208-1.5769 1.524-1.5558 0.77258 0 1.1959 0.45508 1.1959 1.3758v2.6564h0.70908v-2.6564c0-1.4817-0.5715-2.0743-1.905-2.0743-0.635 0-1.1536 0.23283-1.524 0.635v-0.56092h-0.70908zm-1.8716-5.5986c0.26458 0 0.49742-0.22225 0.49742-0.508 0-0.254-0.23283-0.48683-0.49742-0.48683-0.28575 0-0.508 0.23283-0.508 0.48683 0 0.28575 0.22225 0.508 0.508 0.508zm-0.35983 5.5986h0.74083v-4.6567h-0.74083zm-3.5601 0.11642c1.3229 0 2.413-1.1324 2.413-2.4342 0-1.3229-1.0901-2.413-2.413-2.413s-2.413 1.0901-2.413 2.413c0 1.3018 1.0901 2.4342 2.413 2.4342zm0-4.1487c0.94192 0 1.6722 0.77258 1.6722 1.7145 0 0.92075-0.73025 1.7357-1.6722 1.7357-0.94192 0-1.6722-0.81492-1.6722-1.7357 0-0.94192 0.73025-1.7145 1.6722-1.7145zm-5.5116-0.6985c-0.70908 0-1.3335 0.32808-1.7568 0.83608v-0.762h-0.70908v6.7733h0.70908v-2.8575c0.42333 0.51858 1.0478 0.85725 1.7568 0.85725 1.3229 0 2.413-1.1324 2.413-2.4342 0-1.3229-1.0901-2.413-2.413-2.413zm0.02117 4.1487c-0.92075 0-1.7357-0.81492-1.7357-1.7357 0-0.94192 0.81492-1.7145 1.7357-1.7145 0.94192 0 1.651 0.77258 1.651 1.7145 0 0.92075-0.70908 1.7357-1.651 1.7357zm-5.8766 0.58208h0.77258l1.9156-4.6567h-0.77258l-1.524 3.7148-1.5346-3.7148h-0.77258zm-2.3431-2.3178c0-1.3229-1.0901-2.413-2.413-2.413s-2.413 1.0901-2.413 2.413c0 1.3018 1.0901 2.4342 2.413 2.4342 0.94192 0 1.778-0.53975 2.1696-1.3441h-0.877c-0.29633 0.381-0.75142 0.64558-1.2912 0.64558-0.8255 0-1.4922-0.635-1.6404-1.4076h4.0534zm-2.413-1.7145c0.81492 0 1.4817 0.59267 1.6404 1.3652h-3.2808c0.15875-0.77258 0.81492-1.3652 1.6404-1.3652zm-4.1847 4.0322h0.70908v-7.5565h-0.70908v3.6618c-0.42333-0.508-1.0478-0.83608-1.7568-0.83608-1.3229 0-2.413 1.0901-2.413 2.413 0 1.3018 1.0901 2.4342 2.413 2.4342 0.70908 0 1.3335-0.33867 1.7568-0.85725zm-1.778-0.58208c-0.94192 0-1.651-0.81492-1.651-1.7357 0-0.94192 0.70908-1.7145 1.651-1.7145 0.92075 0 1.7357 0.77258 1.7357 1.7145 0 0.92075-0.81492 1.7357-1.7357 1.7357z')
+					circle#path16(stroke-width='.15280', cy='85.298', cx='78.057', r='.54571')
 
 		section.hero
 			.triangle.triangle__first
@@ -34,7 +39,8 @@ body
 							a(href="https://github.com/tapjs/node-tap", target="__blank") node-tap
 							| , считаем покрытие, используя 
 							a(href="https://github.com/istanbuljs/nyc", target="__blank") nyc
-							| .
+							| . Пишем документацию с использованием 
+							a(href="https://raml.org/", target="__blank") RAML.
 					.technologies__part
 						.technologies__title Front-end
 						.technologies__description 
@@ -59,7 +65,7 @@ body
 					.technologies__part
 						.technologies__title Infrastructure
 						.technologies__description 
-							| Мы используем CI для всех наших проектов.
+							| Мы используем CI и CD для всех наших проектов.
 							| Автоматизируем процесс выкатки с помощью 
 							a(href="https://www.ansible.com", target="__blank") ansible
 							| .
@@ -85,20 +91,38 @@ body
 							| Помимо использования мы еще и делаем свои.
 							| Этот подход позволяет нам всегда быть в курсе самых последних технологий, использовать их и по возможности развивать.
 						p
-							| Вот несколько примеров проектов, сделанных нами, а также тех, в которых мы принимали участие.
+							| Вот некоторые из проектов, сделанных нами, и те, в которых мы принимали участие.
 
 					.open-source__projects
-						.project
-							a.project__title(href="https://github.com/dvpnt/rpc-over-ipc", target="__blank") rpc-over-ipc
-							.project__description Lightweight RPC over IPC for node.js
+						-
+							const projects = [
+								{
+									href: 'https://github.com/dvpnt/rpc-over-ipc',
+									title: 'rpc-over-ipc',
+									description: 'Lightweight RPC over IPC for node.js'
+								},
+								{
+									href: 'https://github.com/dvpnt/passport-ok-strategy',
+									title: 'passport-ok-strategy',
+									description: 'Passport strategy for authenticating with odnoklassniki using the OAuth 2.0 API.'
+								},
+								{
+									href: 'https://github.com/dvpnt/styled-media-helper',
+									title: 'styled-media-helper',
+									description: 'Module that makes easy to write media queries using styled-components.'
+								},
+								{
+									href: 'https://github.com/node-ci',
+									title: 'nci',
+									description: 'Flexible, open source continuous integration server written in node.js'
+								}
+							];
 
-						.project
-							a.project__title(href="https://github.com/dvpnt/passport-ok-strategy", target="__blank") passport-ok-strategy
-							.project__description Passport strategy for authenticating with odnoklassniki using the OAuth 2.0 API.
-
-						.project
-							a.project__title(href="https://github.com/dvpnt/styled-media-helper", target="__blank") styled-media-helper
-							.project__description Module that makes easy to write media queries using styled-components.
+						for project in projects
+							.open-source__project
+								.project
+									a.project__title(href=project.href, target="__blank")= project.title
+									.project__description= project.description
 
 			.main__part
 				h3.main__heading У вас есть задача или вопрос? Давайте обсуждать.

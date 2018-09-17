@@ -12,13 +12,13 @@
 }
 
 .header {
-	font-family: Montserrat, Arial, sans-serif;
+	font-family: Montserrat, sans-serif;
 
 	animation: appearance 0.8s ease-out;
 
 	&__title {
 		font-weight: bold;
-		font-size: 5vmax;
+		font-size: 8vw;
 		color: white;
 		font-family: Montserrat, sans-serif;
 
@@ -28,7 +28,7 @@
 	}
 
 	&__subtitle {
-		font-size: 4vmax;
+		font-size: 6vw;
 		color: lightgray;
 		font-family: Montserrat, sans-serif;
 

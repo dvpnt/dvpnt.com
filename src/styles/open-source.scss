@@ -2,18 +2,27 @@
 
 .open-source {
 	&__intro {
-		font-family: "Roboto Condensed", sans-serif;
-		padding: 20px;
+		font-family: "Roboto", sans-serif;
+		padding: 0 20px;
+		margin: 0 auto 40px;
 
 		@media (min-width: map-get($grid-breakpoints, "md")) {
 			width: 60vw;
 			min-height: 50px;
 
-			margin: 0 auto 40px;
+			padding: 30px;
 
 			font-size: 18px;
 
-			background: #f5f3f7;
+			background: $gray;
+		}
+
+		p {
+			margin-top: 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -21,50 +30,16 @@
 		margin: 0 auto;
 		display: flex;
 		flex-wrap: wrap;
-	}
-}
-
-.project {
-	position: relative;
-	width: 100%;
-	padding: 40px;
-	border-bottom: 1px solid #f5f3f7;
-
-	&:first-child {
-		border-top: 1px solid #f5f3f7;
+		border-top: 1px solid $gray;
 	}
 
-	&__title {
-		display: block;
-		margin-bottom: 20px;
-		font-family: Montserrat, sans-serif;
-		text-align: center;
+	&__project {
+		width: 100%;
+		border-bottom: 1px solid $gray;
 
-		color: black;
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 1;
-			width: 100%;
-			height: 100%;
+		@media (min-width: map-get($grid-breakpoints, "md")) {
+			flex: 33.3% 0 0;
+			border-right: 1px solid $gray;
 		}
-
-		&:hover {
-			text-decoration: none;
-		}
-	}
-
-	&__description {
-		font-family: "Roboto Condensed", sans-serif;
-		text-align: center;
-	}
-
-	@media (min-width: map-get($grid-breakpoints, "md")) {
-		flex: 33.3% 0 0;
-		border-top: 1px solid #f5f3f7;
-		border-right: 1px solid #f5f3f7;
 	}
 }

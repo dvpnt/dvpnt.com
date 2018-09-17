@@ -1,3 +1,5 @@
+@import "variables";
+
 .button {
 	::-moz-focus-inner {
 		border: none;
@@ -9,7 +11,7 @@
 
 	padding: 20px 30px;
 
-	background: blue;
+	background: $light-blue;
 	color: white;
 	cursor: pointer;
 
@@ -22,15 +24,15 @@
 	outline: none;
 
 	transition: background-color 100ms ease, color 80ms ease, border-color 100ms ease;
-	
+
 
 	&:hover,
 	&:focus,
 	&:active {
 		outline: none;
-		border-color: blue;
+		border-color: $light-blue;
 		background: transparent;
-		color: blue;
+		color: $light-blue;
 		text-decoration: none;
 	}
 }

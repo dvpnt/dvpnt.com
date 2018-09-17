@@ -10,8 +10,8 @@
 
 	&__part {
 		padding: 20px;
-		border-right: 1px solid #f5f3f7;
-		border-bottom: 1px solid #f5f3f7;
+		border-right: 1px solid $gray;
+		border-bottom: 1px solid $gray;
 
 		@media (min-width: map-get($grid-breakpoints, "lg")) {
 			flex-basis: 33.3%;
@@ -23,12 +23,16 @@
 		margin-bottom: 20px;
 		font-family: Montserrat, sans-serif;
 
-		font-size: 30px;
+		font-size: 7vw;
 		font-weight: bold;
+
+		@media (min-width: map-get($grid-breakpoints, "lg")) {
+			font-size: 2.5vw;
+		}
 	}
 
 	&__description {
-		font-family: 'Roboto Condensed', sans-serif;
+		font-family: 'Roboto', sans-serif;
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 1.4;

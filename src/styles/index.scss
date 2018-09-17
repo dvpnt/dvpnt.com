@@ -1,23 +1,9 @@
 @import "../../node_modules/normalize.css/normalize.css";
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Souce+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
 
-*, ::after, ::before {
-	box-sizing: border-box;
-}
-
-a {
-	color: #00e7cb;
-	text-decoration: none;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}
+@import "common";
 
 @import "button";
 @import "header";
@@ -27,4 +13,5 @@ a {
 @import "open-source";
 @import "page";
 @import "projects";
+@import "project";
 @import "technologies";

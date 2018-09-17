@@ -25,8 +25,11 @@
 	}
 
 	&__item {
-		width: 45vw;
-		margin-bottom: 40px;
+		width: 60vw;
+
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
 
 		@media (min-width: map-get($grid-breakpoints, "md")) {
 			width: 20vw;
