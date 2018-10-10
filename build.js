@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'development') {
 } else {
 	metalsmith
 		.use(sass({
-			outputStyle: 'nested'
+			outputStyle: 'compressed'
 		}))
 		.use(autoprefixer());
 }
