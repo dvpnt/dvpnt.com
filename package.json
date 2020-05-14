@@ -2,23 +2,6 @@
   "name": "dvpnt.com",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "dev": "NODE_ENV=development node build",
-    "build": "node build"
-  },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jstransformer-pug": "^0.3.0",
-    "metalsmith": "^2.3.0",
-    "metalsmith-autoprefixer": "^1.1.2",
-    "metalsmith-debug": "^1.2.0",
-    "metalsmith-layouts": "^2.1.0",
-    "metalsmith-markdown": "^0.2.2",
-    "metalsmith-sass": "^1.5.1",
-    "metalsmith-watch": "^1.0.3",
-    "normalize.css": "^8.0.0"
-  },
-  "dependencies": {}
+  "license": "ISC"
 }
