@@ -1,4 +1,5 @@
 .cache
 .eslintcache
+.stylelintcache
 public
 node_modules
