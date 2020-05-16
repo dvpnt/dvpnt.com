@@ -1,7 +1,8 @@
 import React from 'react';
+import './index.css';
 
 function Home() {
-	return <h1>Hello Gatsby!</h1>;
+	return <h1>Devpoint</h1>;
 }
 
 export default Home;
