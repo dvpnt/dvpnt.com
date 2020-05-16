@@ -3,5 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "scripts": {
+    "clean": "gatsby clean",
+    "build": "gatsby build",
+    "dev": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "2.21.33",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "nrun": "1.0.0"
+  }
 }
