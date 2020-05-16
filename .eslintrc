@@ -1,0 +1,4 @@
+{
+	"extends": "dvpnt-react",
+	"parser": "babel-eslint"
+}

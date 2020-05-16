@@ -1,3 +1,4 @@
 .cache
+.eslintcache
 public
 node_modules

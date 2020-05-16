@@ -5,6 +5,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "lint": "eslint --ext js,jsx --cache ./",
     "clean": "gatsby clean",
     "build": "gatsby build",
     "dev": "gatsby develop"
@@ -15,6 +16,21 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-dvpnt": "4.0.3",
+    "eslint-config-dvpnt-react": "4.0.4",
+    "eslint-plugin-import": "2.20.2",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.2",
     "nrun": "1.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix"
   }
 }
