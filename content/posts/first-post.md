@@ -17,6 +17,10 @@ console.log(a); // prints a
 * JS — `js~const a = {};`
 * CSS — `css~.page { color: black; }`
 
+a -- b "asd" "привет"
+
+a - b
+
 ### Links
 
 [relative link](/blog)
