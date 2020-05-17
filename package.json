@@ -9,7 +9,8 @@
     "lint-js": "eslint --ext js,jsx --cache ./src",
     "lint": "run-p -s -c lint-*",
     "clean": "gatsby clean",
-    "build": "gatsby build",
+    "build": "nrun clean && gatsby build",
+    "serve": "gatsby serve",
     "dev": "gatsby develop"
   },
   "dependencies": {

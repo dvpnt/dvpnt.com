@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
+import {Layout} from '../components';
 
 function BlogTemplate({data}) {
 	const {markdownRemark} = data;
 	const {frontmatter, html} = markdownRemark;
 
 	return (
-		<div>
+		<Layout>
 			<h1>{frontmatter.title}</h1>
 			<h2>{frontmatter.date}</h2>
 			<div dangerouslySetInnerHTML={{__html: html}} />
-		</div>
+		</Layout>
 	);
 }
 

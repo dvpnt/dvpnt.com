@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
-import PostLink from '../components/PostLink';
+import {Layout, PostLink} from '../components';
 import './index.css';
 
 function Home({data}) {
@@ -10,11 +10,9 @@ function Home({data}) {
 		.map((edge) => <PostLink key={edge.node.id} post={edge.node} />);
 
 	return (
-		<div>
-			<h1>Devpoint</h1>
-			<h2>Posts</h2>
+		<Layout>
 			<div>{Posts}</div>
-		</div>
+		</Layout>
 	);
 }
 
