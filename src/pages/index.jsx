@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import {Layout} from '../components';
-import './index.css';
+import './index.scss';
 
 function Site() {
 	return (

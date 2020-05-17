@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Container from './Container';
 
 function Layout({children}) {
 	return (
 		<>
 			<header>Header</header>
-			<main style={{maxWidth: '800px', margin: '0 auto'}}>{children}</main>
+			<main>
+				<Container>
+					{children}
+				</Container>
+			</main>
 			<footer>Footer</footer>
 		</>
 	);

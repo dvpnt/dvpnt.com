@@ -12,7 +12,7 @@ var a = {b: 123};
 console.log(a); // prints a
 ```
 
-## Inlide code
+## Inline code
 
 * JS — `js~const a = {};`
 * CSS — `css~.page { color: black; }`
