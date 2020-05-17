@@ -10,6 +10,7 @@ function Blog(props) {
 		.filter((edge) => Boolean(edge.node.frontmatter.date))
 		.map((edge) => ({
 			id: edge.node.id,
+			path: edge.node.fields.slug,
 			...edge.node.frontmatter
 		}));
 
@@ -39,9 +40,11 @@ export const pageQuery = graphql`
 				node {
 					id
 					excerpt(pruneLength: 250)
+					fields {
+						slug
+					}
 					frontmatter {
 						date(formatString: "MMMM DD, YYYY")
-						path
 						title
 					}
 				}
