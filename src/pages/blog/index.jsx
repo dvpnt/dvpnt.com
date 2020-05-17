@@ -17,9 +17,11 @@ function Blog(props) {
 	return (
 		<Layout>
 			{posts.map((post) => (
-				<Link key={post.id} to={post.path}>
-					{post.title} ({post.date})
-				</Link>
+				<div>
+					<Link key={post.id} to={post.path}>
+						{post.title} ({post.date})
+					</Link>
+				</div>
 			))}
 		</Layout>
 	);
