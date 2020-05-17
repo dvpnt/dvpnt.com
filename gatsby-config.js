@@ -7,6 +7,25 @@ module.exports = {
 				path: `${__dirname}/content/posts`
 			}
 		},
-		'gatsby-transformer-remark'
+		{
+			resolve: 'gatsby-transformer-remark',
+			options: {
+				plugins: [
+					'gatsby-remark-autolink-headers',
+					{
+						resolve: 'gatsby-remark-prismjs',
+						options: {
+							inlineCodeMarker: '~'
+						}
+					},
+					{
+						resolve: 'gatsby-remark-external-links',
+						options: {
+							target: '_blank'
+						}
+					}
+				]
+			}
+		}
 	]
 };

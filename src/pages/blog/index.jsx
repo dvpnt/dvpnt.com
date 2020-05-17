@@ -17,8 +17,8 @@ function Blog(props) {
 	return (
 		<Layout>
 			{posts.map((post) => (
-				<div>
-					<Link key={post.id} to={post.path}>
+				<div key={post.id}>
+					<Link to={post.path}>
 						{post.title} ({post.date})
 					</Link>
 				</div>
