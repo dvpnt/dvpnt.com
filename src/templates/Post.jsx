@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {graphql} from 'gatsby';
 import {Layout} from '../components';
 
-function BlogTemplate({data}) {
+function Post({data}) {
 	const {markdownRemark} = data;
 	const {frontmatter, html} = markdownRemark;
 
@@ -16,7 +16,7 @@ function BlogTemplate({data}) {
 	);
 }
 
-BlogTemplate.propTypes = {
+Post.propTypes = {
 	data: PropTypes.shape({
 		markdownRemark: PropTypes.shape({
 			frontmatter: PropTypes.object,
@@ -38,4 +38,4 @@ export const pageQuery = graphql`
 	}
 `;
 
-export default BlogTemplate;
+export default Post;
