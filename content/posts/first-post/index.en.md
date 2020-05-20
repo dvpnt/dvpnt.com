@@ -3,26 +3,10 @@ date: "2020-05-17"
 title: "My first blog post"
 ---
 
-## Some header
+## Header #2
 
-### Code
+Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. 
 
-```js
-var a = {b: 123};
-console.log(a); // prints a
-```
+## Header #3
 
-## Inline code
-
-* JS — `js~const a = {};`
-* CSS — `css~.page { color: black; }`
-
-a -- b "asd" "привет"
-
-a - b
-
-### Links
-
-[relative link](/blog)
-
-[absolute link](https://www.gatsbyjs.org/packages/gatsby-remark-external-links/)
+Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. Some text. A lot of text. 
