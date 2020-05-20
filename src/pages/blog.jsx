@@ -11,16 +11,18 @@ function Blog(props) {
 		.map((edge) => ({
 			id: edge.node.id,
 			path: edge.node.fields.slug,
+			text: edge.node.excerpt,
 			...edge.node.frontmatter
 		}));
 
 	return (
 		<Layout>
 			{posts.map((post) => (
-				<div key={post.id}>
-					<Link to={post.path}>
+				<div key={post.id} style={{marginBottom: '20px'}}>
+					<Link to={`blog/${post.path}`}>
 						{post.title} ({post.date})
 					</Link>
+					<div>{post.text}</div>
 				</div>
 			))}
 		</Layout>
