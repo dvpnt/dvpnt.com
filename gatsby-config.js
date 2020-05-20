@@ -1,6 +1,5 @@
 module.exports = {
 	plugins: [
-		'gatsby-plugin-sass',
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
@@ -29,6 +28,16 @@ module.exports = {
 				]
 			}
 		},
+		{
+			resolve: 'gatsby-plugin-i18n',
+			options: {
+				langKeyDefault: 'ru',
+				useLangKeyLayout: false,
+				prefixDefault: false,
+				pagesPaths: ['content/posts']
+			}
+		},
+		'gatsby-plugin-sass',
 		'gatsby-plugin-catch-links'
 	]
 };

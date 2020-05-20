@@ -1,6 +1,4 @@
 ---
 date: "2020-05-17"
-title: "Getting started!"
+title: "Поговорим?"
 ---
-
-So. Let's talk about...
