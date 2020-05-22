@@ -1,3 +1,4 @@
+const _ = require('lodash');
 const path = require('path');
 
 exports.createPages = async ({actions, graphql, reporter}) => {
@@ -14,6 +15,8 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 					node {
 						fields {
 							slug
+							slugWithoutLang
+							langKey
 						}
 					}
 				}
@@ -28,13 +31,40 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 		return;
 	}
 
-	result.data.allMarkdownRemark.edges.forEach(({node}) => {
+	const {edges} = result.data.allMarkdownRemark;
+	const groupedEdgesByLang = _.groupBy(edges, 'node.fields.slugWithoutLang');
+
+	edges.forEach(({node}) => {
+		const {slug, slugWithoutLang, langKey} = node.fields;
+
+		const translations = _(groupedEdgesByLang[slugWithoutLang])
+			.filter(
+				({node}) => node.fields.langKey !== langKey
+			)
+			.map(({node}) => _.pick(node.fields, 'langKey', 'slug'))
+			.value();
+
 		createPage({
-			path: path.join('/blog', node.fields.slug).replace(/\/$/, ''),
+			path: path.join('/blog', slug).replace(/\/$/, ''),
 			component: PostTemplate,
 			context: {
-				slug: node.fields.slug
+				slug,
+				translations
 			}
 		});
 	});
+};
+
+exports.onCreateNode = ({node, actions}) => {
+	const {createNodeField} = actions;
+
+	if (node.internal.type === 'MarkdownRemark') {
+		const {slug, langKey} = node.fields;
+
+		createNodeField({
+			name: 'slugWithoutLang',
+			node,
+			value: slug.replace(new RegExp(`^/${langKey}/`), '/')
+		});
+	}
 };
