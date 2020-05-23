@@ -2,47 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link, graphql} from 'gatsby';
 import {Layout, SEO} from '../components';
+import withPostAdapter from '../hocks/withPostAdapter';
 
-function Post({data, pageContext}) {
-	const {markdownRemark} = data;
-	const {frontmatter, html, fields} = markdownRemark;
-	const {slug, translations} = pageContext;
-
+function Post(props) {
 	return (
 		<Layout>
 			<SEO
-				lang={fields.langKey}
-				title={frontmatter.title}
-				// description={post.frontmatter.spoiler}
-				slug={slug}
+				title={props.title}
+				description={props.description}
+				lang={props.langKey}
+				link={props.link}
 			/>
-			<h1>{frontmatter.title}</h1>
-			<h2>{frontmatter.date}</h2>
-			{Boolean(translations.length) && (
+			<h1>{props.title}</h1>
+			<h2>{props.date}</h2>
+			{Boolean(props.translations.length) && (
 				<div style={{background: '#eee', padding: '15px 20px'}}>
 					Доступные переводы: {' '}
-					{translations.map(({langKey, slug}) => (
-						<Link key={slug} to={`/blog/${slug}`}>{langKey}</Link>
+					{props.translations.map(({langKey, link}) => (
+						<Link key={link} to={link}>{langKey}</Link>
 					))}
 				</div>
 			)}
-			<div dangerouslySetInnerHTML={{__html: html}} />
+			<div dangerouslySetInnerHTML={{__html: props.html}} />
 		</Layout>
 	);
 }
 
 Post.propTypes = {
-	data: PropTypes.shape({
-		markdownRemark: PropTypes.shape({
-			frontmatter: PropTypes.object,
-			fields: PropTypes.object,
-			html: PropTypes.any
-		}).isRequired
-	}).isRequired,
-	pageContext: PropTypes.shape({
-		slug: PropTypes.string.isRequired,
-		translations: PropTypes.array.isRequired
-	}).isRequired
+	title: PropTypes.string.isRequired,
+	description: PropTypes.string.isRequired,
+	langKey: PropTypes.string.isRequired,
+	link: PropTypes.string.isRequired,
+	date: PropTypes.string.isRequired,
+	html: PropTypes.string.isRequired,
+	translations: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export const pageQuery = graphql`
@@ -51,13 +44,15 @@ export const pageQuery = graphql`
 			html
 			fields {
 				langKey
+				link
 			}
 			frontmatter {
 				date(formatString: "MMMM DD, YYYY")
 				title
+				description
 			}
 		}
 	}
 `;
 
-export default Post;
+export default withPostAdapter(Post);

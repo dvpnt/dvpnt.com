@@ -2,28 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link, graphql} from 'gatsby';
 import {Layout, SEO} from '../components';
+import withPostAdapter from '../hocks/withPostAdapter';
 
-function Blog(props) {
-	const {edges} = props.data.allMarkdownRemark;
-
-	const posts = edges
-		.filter((edge) => Boolean(edge.node.frontmatter.date))
-		.map((edge) => ({
-			id: edge.node.id,
-			path: edge.node.fields.slug,
-			text: edge.node.excerpt,
-			...edge.node.frontmatter
-		}));
-
+function Blog({posts}) {
 	return (
 		<Layout>
-			<SEO title="Блог" />
+			<SEO title="Блог" link="/blog" />
 			{posts.map((post) => (
 				<div key={post.id} style={{marginBottom: '20px'}}>
-					<Link to={`blog/${post.path}`}>
+					<Link to={post.link}>
 						{post.title} ({post.date})
 					</Link>
-					<div>{post.text}</div>
+					<div>{post.excerpt}</div>
 				</div>
 			))}
 		</Layout>
@@ -31,11 +21,13 @@ function Blog(props) {
 }
 
 Blog.propTypes = {
-	data: PropTypes.shape({
-		allMarkdownRemark: PropTypes.shape({
-			edges: PropTypes.array
-		})
-	}).isRequired
+	posts: PropTypes.arrayOf(PropTypes.shape({
+		id: PropTypes.string.isRequired,
+		excerpt: PropTypes.string.isRequired,
+		link: PropTypes.string.isRequired,
+		title: PropTypes.string.isRequired,
+		date: PropTypes.string.isRequired
+	}).isRequired).isRequired
 };
 
 export const pageQuery = graphql`
@@ -49,7 +41,7 @@ export const pageQuery = graphql`
 					id
 					excerpt(pruneLength: 250)
 					fields {
-						slug
+						link
 					}
 					frontmatter {
 						date(formatString: "MMMM DD, YYYY")
@@ -61,4 +53,4 @@ export const pageQuery = graphql`
 	}
 `;
 
-export default Blog;
+export default withPostAdapter(Blog);

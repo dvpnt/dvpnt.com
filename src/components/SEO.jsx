@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 
-function SEO({description, lang, meta, title, slug}) {
+function SEO({description, lang, meta, title, link}) {
 	const {site} = useStaticQuery(
 		graphql`
 			query {
@@ -22,7 +22,7 @@ function SEO({description, lang, meta, title, slug}) {
 	const {siteMetadata} = site;
 	const metaTitle = title || siteMetadata.title;
 	const metaDescription = description || siteMetadata.description;
-	const metaUrl = `${siteMetadata.siteUrl}${slug}`;
+	const metaUrl = `${siteMetadata.siteUrl}${link}`;
 
 	return (
 		<Helmet
@@ -74,7 +74,7 @@ function SEO({description, lang, meta, title, slug}) {
 SEO.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
-	slug: PropTypes.string,
+	link: PropTypes.string,
 	lang: PropTypes.string,
 	meta: PropTypes.arrayOf(PropTypes.object)
 };
@@ -82,7 +82,7 @@ SEO.propTypes = {
 SEO.defaultProps = {
 	title: '',
 	description: '',
-	slug: '',
+	link: '',
 	lang: 'ru',
 	meta: []
 };

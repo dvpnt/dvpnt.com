@@ -1,6 +1,7 @@
 ---
 date: "2020-05-17"
 title: "My first blog post"
+description: "Fisrt post but not last"
 ---
 
 ## Header #2

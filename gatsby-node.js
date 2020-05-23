@@ -1,6 +1,10 @@
 const _ = require('lodash');
 const path = require('path');
 
+function makePostLink(slug) {
+	return path.join('/blog', slug).replace(/\/$/, '');
+}
+
 exports.createPages = async ({actions, graphql, reporter}) => {
 	const {createPage} = actions;
 	const PostTemplate = require.resolve('./src/templates/Post.jsx');
@@ -17,6 +21,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 							slug
 							slugWithoutLang
 							langKey
+							link
 						}
 					}
 				}
@@ -41,11 +46,11 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 			.filter(
 				({node}) => node.fields.langKey !== langKey
 			)
-			.map(({node}) => _.pick(node.fields, 'langKey', 'slug'))
+			.map(({node}) => _.pick(node.fields, 'langKey', 'link'))
 			.value();
 
 		createPage({
-			path: path.join('/blog', slug).replace(/\/$/, ''),
+			path: makePostLink(slug),
 			component: PostTemplate,
 			context: {
 				slug,
@@ -65,6 +70,12 @@ exports.onCreateNode = ({node, actions}) => {
 			name: 'slugWithoutLang',
 			node,
 			value: slug.replace(new RegExp(`^/${langKey}/`), '/')
+		});
+
+		createNodeField({
+			name: 'link',
+			node,
+			value: makePostLink(slug)
 		});
 	}
 };
