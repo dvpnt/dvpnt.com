@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Link, graphql} from 'gatsby';
-import {Layout} from '../components';
+import {Layout, SEO} from '../components';
 
 function Blog(props) {
 	const {edges} = props.data.allMarkdownRemark;
@@ -17,6 +17,7 @@ function Blog(props) {
 
 	return (
 		<Layout>
+			<SEO title="Блог" />
 			{posts.map((post) => (
 				<div key={post.id} style={{marginBottom: '20px'}}>
 					<Link to={`blog/${post.path}`}>

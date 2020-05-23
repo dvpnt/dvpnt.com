@@ -1,10 +1,11 @@
 import React from 'react';
-import {Layout} from '../components';
+import {Layout, SEO} from '../components';
 
 function NotFound() {
 	return (
 		<Layout>
-			Not found
+			<SEO title="Page not found" />
+			<div>Not found</div>
 		</Layout>
 	);
 }
