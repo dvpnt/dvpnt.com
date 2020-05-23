@@ -1,3 +1,5 @@
+const {defaultLanguage} = require('./i18n');
+
 module.exports = {
 	siteMetadata: {
 		title: 'devpoint',
@@ -37,7 +39,7 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-i18n',
 			options: {
-				langKeyDefault: 'ru',
+				langKeyDefault: defaultLanguage,
 				useLangKeyLayout: false,
 				prefixDefault: false,
 				pagesPaths: ['content/posts']

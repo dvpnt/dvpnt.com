@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
+import {defaultLanguage} from '../../i18n';
 
 function SEO({description, lang, meta, title, link}) {
 	const {site} = useStaticQuery(
@@ -83,7 +84,7 @@ SEO.defaultProps = {
 	title: '',
 	description: '',
 	link: '',
-	lang: 'ru',
+	lang: defaultLanguage,
 	meta: []
 };
 

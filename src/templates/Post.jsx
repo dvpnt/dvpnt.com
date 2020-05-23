@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Link, graphql} from 'gatsby';
 import {Layout, SEO} from '../components';
 import withPostAdapter from '../hocks/withPostAdapter';
+import {languages} from '../../i18n';
 
 function Post(props) {
 	return (
@@ -17,9 +18,9 @@ function Post(props) {
 			<h2>{props.date}</h2>
 			{Boolean(props.translations.length) && (
 				<div style={{background: '#eee', padding: '15px 20px'}}>
-					Доступные переводы: {' '}
+					This article is also available in: {' '}
 					{props.translations.map(({langKey, link}) => (
-						<Link key={link} to={link}>{langKey}</Link>
+						<Link key={link} to={link}>{languages[langKey]}</Link>
 					))}
 				</div>
 			)}

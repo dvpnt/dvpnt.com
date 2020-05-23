@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const path = require('path');
+const {defaultLanguage} = require('./i18n');
 
 function makePostLink(slug) {
 	return path.join('/blog', slug).replace(/\/$/, '');
@@ -10,42 +11,7 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 	const BlogTemplate = require.resolve('./src/templates/Blog.jsx');
 	const PostTemplate = require.resolve('./src/templates/Post.jsx');
 
-	let result = await graphql(`
-		query {
-			allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-				edges {
-					node {
-						fields {
-							langKey
-						}
-					}
-				}
-			}
-		}
-	`);
-
-	if (result.errors) {
-		reporter.panicOnBuild('Error while running GraphQL query.');
-
-		return;
-	}
-
-	const langKeys = _(result.data.allMarkdownRemark.edges)
-		.map('node.fields.langKey')
-		.uniq()
-		.value();
-
-	langKeys.forEach((langKey) => {
-		createPage({
-			path: langKey === 'ru' ? '/blog' : `/blog/${langKey}`,
-			component: BlogTemplate,
-			context: {
-				langKey
-			}
-		});
-	});
-
-	result = await graphql(`
+	const result = await graphql(`
 		{
 			allMarkdownRemark(
 				sort: { order: DESC, fields: [frontmatter___date] }
@@ -65,7 +31,6 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 		}
 	`);
 
-	// Handle errors
 	if (result.errors) {
 		reporter.panicOnBuild('Error while running GraphQL query.');
 
@@ -73,15 +38,29 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 	}
 
 	const {edges} = result.data.allMarkdownRemark;
-	const groupedEdgesByLang = _.groupBy(edges, 'node.fields.slugWithoutLang');
+
+	const langKeys = _(edges)
+		.map('node.fields.langKey')
+		.uniq()
+		.value();
+
+	langKeys.forEach((langKey) => {
+		createPage({
+			path: langKey === defaultLanguage ? '/blog' : `/blog/${langKey}`,
+			component: BlogTemplate,
+			context: {
+				langKey
+			}
+		});
+	});
+
+	const groupedEdges = _.groupBy(edges, 'node.fields.slugWithoutLang');
 
 	edges.forEach(({node}) => {
 		const {slug, slugWithoutLang, langKey} = node.fields;
 
-		const translations = _(groupedEdgesByLang[slugWithoutLang])
-			.filter(
-				({node}) => node.fields.langKey !== langKey
-			)
+		const translations = _(groupedEdges[slugWithoutLang])
+			.filter(({node}) => node.fields.langKey !== langKey)
 			.map(({node}) => _.pick(node.fields, 'langKey', 'link'))
 			.value();
 
