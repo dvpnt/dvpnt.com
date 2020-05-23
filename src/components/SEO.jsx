@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 import {defaultLanguage} from '../../i18n';
 
-function SEO({description, lang, meta, title, link}) {
+function SEO({description, langKey, meta, title, link}) {
 	const {site} = useStaticQuery(
 		graphql`
 			query {
@@ -27,7 +27,7 @@ function SEO({description, lang, meta, title, link}) {
 
 	return (
 		<Helmet
-			htmlAttributes={{lang}}
+			htmlAttributes={{lang: langKey}}
 			title={metaTitle}
 			titleTemplate={title && `%s — ${siteMetadata.title}`}
 			meta={[
@@ -76,7 +76,7 @@ SEO.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
 	link: PropTypes.string,
-	lang: PropTypes.string,
+	langKey: PropTypes.string,
 	meta: PropTypes.arrayOf(PropTypes.object)
 };
 
@@ -84,7 +84,7 @@ SEO.defaultProps = {
 	title: '',
 	description: '',
 	link: '',
-	lang: defaultLanguage,
+	langKey: defaultLanguage,
 	meta: []
 };
 

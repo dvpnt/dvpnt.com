@@ -4,10 +4,10 @@ import {Link, graphql} from 'gatsby';
 import {Layout, SEO} from '../components';
 import withPostAdapter from '../hocks/withPostAdapter';
 
-function Blog({posts}) {
+function Blog({posts, link, langKey}) {
 	return (
 		<Layout>
-			<SEO title="Блог" link="/blog" />
+			<SEO title="Блог" link={link} langKey={langKey} />
 			{posts.map((post) => (
 				<div key={post.id} style={{marginBottom: '20px'}}>
 					<Link to={post.link}>
@@ -27,7 +27,9 @@ Blog.propTypes = {
 		link: PropTypes.string.isRequired,
 		title: PropTypes.string.isRequired,
 		date: PropTypes.string.isRequired
-	}).isRequired).isRequired
+	}).isRequired).isRequired,
+	link: PropTypes.string.isRequired,
+	langKey: PropTypes.string.isRequired
 };
 
 export const pageQuery = graphql`

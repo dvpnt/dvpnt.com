@@ -19,9 +19,11 @@ export default (WrappedComponent) => {
 
 		return (
 			<WrappedComponent
+				translations={pageContext.translations || []}
+				langKey={pageContext.langKey}
+				link={pageContext.link}
 				{...posts && {posts}}
 				{...post}
-				translations={pageContext.translations || []}
 			/>
 		);
 	}

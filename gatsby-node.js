@@ -2,6 +2,10 @@ const _ = require('lodash');
 const path = require('path');
 const {defaultLanguage} = require('./i18n');
 
+function makeBlogLink(langKey) {
+	return langKey === defaultLanguage ? '/blog' : `/blog/${langKey}`;
+}
+
 function makePostLink(slug) {
 	return path.join('/blog', slug).replace(/\/$/, '');
 }
@@ -44,12 +48,16 @@ exports.createPages = async ({actions, graphql, reporter}) => {
 		.uniq()
 		.value();
 
+
 	langKeys.forEach((langKey) => {
+		const link = makeBlogLink(langKey);
+
 		createPage({
-			path: langKey === defaultLanguage ? '/blog' : `/blog/${langKey}`,
+			path: link,
 			component: BlogTemplate,
 			context: {
-				langKey
+				langKey,
+				link
 			}
 		});
 	});
