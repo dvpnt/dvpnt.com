@@ -7,9 +7,45 @@ function makePostLink(slug) {
 
 exports.createPages = async ({actions, graphql, reporter}) => {
 	const {createPage} = actions;
+	const BlogTemplate = require.resolve('./src/templates/Blog.jsx');
 	const PostTemplate = require.resolve('./src/templates/Post.jsx');
 
-	const result = await graphql(`
+	let result = await graphql(`
+		query {
+			allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+				edges {
+					node {
+						fields {
+							langKey
+						}
+					}
+				}
+			}
+		}
+	`);
+
+	if (result.errors) {
+		reporter.panicOnBuild('Error while running GraphQL query.');
+
+		return;
+	}
+
+	const langKeys = _(result.data.allMarkdownRemark.edges)
+		.map('node.fields.langKey')
+		.uniq()
+		.value();
+
+	langKeys.forEach((langKey) => {
+		createPage({
+			path: langKey === 'ru' ? '/blog' : `/blog/${langKey}`,
+			component: BlogTemplate,
+			context: {
+				langKey
+			}
+		});
+	});
+
+	result = await graphql(`
 		{
 			allMarkdownRemark(
 				sort: { order: DESC, fields: [frontmatter___date] }

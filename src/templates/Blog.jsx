@@ -31,10 +31,10 @@ Blog.propTypes = {
 };
 
 export const pageQuery = graphql`
-	query {
-		allMarkdownRemark(,
+	query($langKey: String!) {
+		allMarkdownRemark(
 			sort: { order: DESC, fields: [frontmatter___date] },
-			filter: { fields: { langKey: { eq: "ru" } } }
+			filter: { fields: { langKey: { eq: $langKey } } }
 		) {
 			edges {
 				node {
