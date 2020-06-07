@@ -2,23 +2,64 @@
   "name": "dvpnt.com",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "scripts": {
-    "dev": "NODE_ENV=development node build",
-    "build": "node build"
-  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "jstransformer-pug": "^0.3.0",
-    "metalsmith": "^2.3.0",
-    "metalsmith-autoprefixer": "^1.1.2",
-    "metalsmith-debug": "^1.2.0",
-    "metalsmith-layouts": "^2.1.0",
-    "metalsmith-markdown": "^0.2.2",
-    "metalsmith-sass": "^1.5.1",
-    "metalsmith-watch": "^1.0.3",
-    "normalize.css": "^8.0.0"
+  "scripts": {
+    "lint-css": "stylelint ./src --cache",
+    "lint-js": "eslint --ext js,jsx --cache ./src",
+    "lint": "run-p -s -c lint-*",
+    "clean": "gatsby clean",
+    "build": "nrun clean && gatsby build",
+    "serve": "gatsby serve",
+    "dev": "gatsby develop"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gatsby": "2.23.1",
+    "gatsby-plugin-catch-links": "2.3.4",
+    "gatsby-plugin-i18n": "1.0.1",
+    "gatsby-plugin-manifest": "2.4.10",
+    "gatsby-plugin-react-helmet": "3.3.3",
+    "gatsby-plugin-sass": "2.3.3",
+    "gatsby-plugin-sharp": "2.6.10",
+    "gatsby-remark-autolink-headers": "2.3.4",
+    "gatsby-remark-copy-linked-files": "2.3.4",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-images": "3.3.9",
+    "gatsby-remark-prismjs": "3.5.3",
+    "gatsby-remark-responsive-iframe": "2.4.4",
+    "gatsby-remark-smartypants": "2.3.3",
+    "gatsby-source-filesystem": "2.3.10",
+    "gatsby-transformer-remark": "2.8.14",
+    "gatsby-transformer-sharp": "2.5.4",
+    "lodash": "4.17.15",
+    "node-sass": "4.14.1",
+    "prismjs": "1.20.0",
+    "prop-types": "15.7.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-helmet": "6.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "10.1.0",
+    "eslint": "6.8.0",
+    "eslint-config-dvpnt": "4.0.8",
+    "eslint-config-dvpnt-react": "4.0.10",
+    "eslint-plugin-import": "2.20.2",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.9",
+    "npm-run-all": "4.1.5",
+    "nrun": "1.0.0",
+    "stylelint": "13.6.0",
+    "stylelint-config-dvpnt": "1.4.0",
+    "stylelint-order": "4.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix",
+    "*.css": "stylelint --cache --fix"
+  }
 }
